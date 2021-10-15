@@ -49,3 +49,10 @@ bld/
 
 # Visual Studio 2015/2017 cache/options directory
 .vs/
+
+*.docx
+*.xlsx
+*.pdf
+
+d[36][24].txt
+r[36][24].txt
