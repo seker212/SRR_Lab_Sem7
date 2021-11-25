@@ -28,12 +28,14 @@ int main(int argc, char* argv[])
 	MPI_Barrier(MPI_COMM_WORLD);
 	MPI_Reduce(&s1, &s1_sum, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
 	MPI_Reduce(&s_part, &s, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
+	
+	
 	if (myid == 0) {
 		pi = s1_sum / s * 4;
 		printf("\ns1 %15.12f\n", s1_sum);
 		printf("\ns %15.12f\n", s);
 		printf("\n pole %15.12f\n", pi);
-		stop = clock();// koniec pomiaru czasu
+		stop = clock();
 		czas = stop - start;
 		printf("\n czas %d  ms \n", czas);
 	}
